@@ -21,6 +21,7 @@ public class Player : MonoBehaviour {
 
     void checkInput()
     {
+        /*
         // Rotate in the movement direction
         float horizontal = Input.GetAxis("Horizontal") * rotateSpeed;
    
@@ -34,5 +35,25 @@ public class Player : MonoBehaviour {
         }
 
         transform.right = rb.velocity;
+        */
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            rb.AddForce(transform.up * jumpSpeed);
+        }
+
+        if (Input.GetKey(KeyCode.D))
+        {
+            //transform.Rotate(0, 180, 0);
+            transform.eulerAngles = new Vector3(0, 180, 0);
+            rb.AddForce(transform.right * movementSpeed);
+        }
+
+        if (Input.GetKey(KeyCode.A))
+        {
+            //transform.Rotate(0, -180, 0);
+            transform.eulerAngles = new Vector3(0, -180, 0);
+            rb.AddForce(-transform.right * movementSpeed);
+        }
+
     }
 }
