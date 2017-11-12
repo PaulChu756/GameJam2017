@@ -154,6 +154,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b5b0392acf80c75409ed0931d7bbcf82, type: 2}
   m_IsPrefabParent: 0
+--- !u!50 &424100387 stripped
+Rigidbody2D:
+  m_PrefabParentObject: {fileID: 50226987005202704, guid: 2e66719c3f0d7a443b8b1ec85aeb3038,
+    type: 2}
+  m_PrefabInternal: {fileID: 530097908}
 --- !u!1 &456293981 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1662975330315506, guid: 874878a30aae8fa4a87f9f79a0fa2ec5,
@@ -239,7 +244,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4024972835197074, guid: 2e66719c3f0d7a443b8b1ec85aeb3038, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -17.2
+      value: -18.4
       objectReference: {fileID: 0}
     - target: {fileID: 4024972835197074, guid: 2e66719c3f0d7a443b8b1ec85aeb3038, type: 2}
       propertyPath: m_LocalPosition.z
@@ -268,6 +273,16 @@ Prefab:
     - target: {fileID: 114000789183055424, guid: 2e66719c3f0d7a443b8b1ec85aeb3038,
         type: 2}
       propertyPath: jumpSpeed
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000789183055424, guid: 2e66719c3f0d7a443b8b1ec85aeb3038,
+        type: 2}
+      propertyPath: rb
+      value: 
+      objectReference: {fileID: 424100387}
+    - target: {fileID: 114000789183055424, guid: 2e66719c3f0d7a443b8b1ec85aeb3038,
+        type: 2}
+      propertyPath: movementSpeed
       value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []

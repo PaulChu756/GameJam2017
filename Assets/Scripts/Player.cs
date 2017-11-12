@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour {
 
-    public float jumpSpeed = 1000;
+    public float jumpSpeed = 10;
     public float movementSpeed = 10;
     public float rotateSpeed = 100;
     public Rigidbody2D rb;
@@ -15,7 +15,7 @@ public class Player : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
         checkInput();
 	}
 
@@ -24,22 +24,22 @@ public class Player : MonoBehaviour {
         if(Input.GetKeyDown(KeyCode.Space))
         {
             //Debug.Log("space key is pressed");
-            transform.position += transform.up * jumpSpeed * Time.deltaTime;
+            //transform.position += transform.up * jumpSpeed * Time.deltaTime;
+            rb.AddForce(transform.up * jumpSpeed);
         }
 
         if(Input.GetKey(KeyCode.D))
         {
             //Debug.Log("D is pressed");
             //rb.MoveRotation(rb.rotation + rotateSpeed * Time.fixedDeltaTime);
-            transform.position += transform.right * movementSpeed * Time.deltaTime;
+            rb.AddForce(transform.right * movementSpeed);
         }
 
         if (Input.GetKey(KeyCode.A))
         {
             //Debug.Log("A is pressed");
             //rb.MoveRotation(-rb.rotation + rotateSpeed * Time.fixedDeltaTime);
-            transform.position += -transform.right * movementSpeed * Time.deltaTime;
-            //transform.Rotate
+            rb.AddForce(-transform.right * movementSpeed);
         }
     }
 }
